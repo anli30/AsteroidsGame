@@ -12,7 +12,7 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
   abstract public void setY(int y);   
   abstract public int getY();   
   abstract public void setDirectionX(double x);   
-  abstract public double getDirectionX();   
+  abstract public double getDirection X();   
   abstract public void setDirectionY(double y);   
   abstract public double getDirectionY();   
   abstract public void setPointDirection(int degrees);   
