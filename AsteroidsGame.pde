@@ -1,5 +1,6 @@
 Spaceship ship;
 Star[] manyS;
+Asteroid[] crash;
 public void setup() 
 {
   size(500,500);
@@ -8,12 +9,20 @@ public void setup()
   for(int i = 0; i < manyS.length; i++){
     manyS[i] = new Star();
   }
+  crash = new Asteroid[100];
+  for(int i = 0; i < crash.length; i++){
+    crash[i] = new Asteroid();
+  }
 }
 public void draw() 
 {
   background(0);
   for(int i = 0; i < manyS.length; i++){
     manyS[i].createStar();
+  }
+  for(int i = 0; i < crash.length; i++){
+    crash[i].show();
+    crash[i].move();
   }
   ship.show();
   ship.move();
