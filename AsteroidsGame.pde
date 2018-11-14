@@ -9,7 +9,7 @@ public void setup()
   for(int i = 0; i < manyS.length; i++){
     manyS[i] = new Star();
   }
-  crash = new Asteroid[100];
+  crash = new Asteroid[20];
   for(int i = 0; i < crash.length; i++){
     crash[i] = new Asteroid();
   }
