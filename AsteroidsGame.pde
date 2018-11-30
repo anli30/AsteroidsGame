@@ -1,6 +1,6 @@
 Spaceship ship;
 Star[] manyS;
-Asteroid[] crash;
+ArrayList <Asteroid> rock;
 public void setup() 
 {
   size(500,500);
@@ -9,9 +9,9 @@ public void setup()
   for(int i = 0; i < manyS.length; i++){
     manyS[i] = new Star();
   }
-  crash = new Asteroid[20];
-  for(int i = 0; i < crash.length; i++){
-    crash[i] = new Asteroid();
+  rock = new ArrayList <Asteroid>();
+  for(int i = 0; i < 20; i++){
+    rock.add(new Asteroid());
   }
 }
 public void draw() 
@@ -20,9 +20,14 @@ public void draw()
   for(int i = 0; i < manyS.length; i++){
     manyS[i].createStar();
   }
-  for(int i = 0; i < crash.length; i++){
-    crash[i].show();
-    crash[i].move();
+  for(int i = 0; i < rock.size(); i++){
+    rock.get(i).show();
+    rock.get(i).move();
+    
+    float d = dist(ship.getX(),ship.getY(),rock.get(i).getX(),rock.get(i).getY());
+    if(d < 15){
+      rock.remove(i);
+    }
   }
   ship.show();
   ship.move();
